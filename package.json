@@ -1,0 +1,26 @@
+{
+  "name": "covid19hub-api",
+  "version": "1.0.0",
+  "description": "API providing Covid19Hub",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "mongodb": "^3.5.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ridhof/covid19hub-api.git"
+  },
+  "keywords": [
+    "API"
+  ],
+  "author": "Ridho Febriansa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ridhof/covid19hub-api/issues"
+  },
+  "homepage": "https://github.com/ridhof/covid19hub-api#readme"
+}
