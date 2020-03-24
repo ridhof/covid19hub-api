@@ -19,9 +19,24 @@ module.exports = (req, res) => {
         } else {
             const db = client.db('covid19hubid');
             
-            db.collection('timeline_summary').find({}).toArray((err, result) => {
+            db.collection('timeline_summary').find({}, { kasus_baru: 0, hari_ke: 0 }).toArray((err, result) => {
                 if (err) res.send({"error": err});
-                res.send(result);
+                const toReturn = [];
+                result.forEach(row => {
+                    const temp = {
+                        hari: row['hari_ke'],
+                        baru: row['kasus_baru'],
+                        kumulatif: row['kasus_kumulatif'],
+                        perawatan: row['dalam_perawatan'],
+                        sembuh: row['sembuh'],
+                        meninggal: row['meninggal'],
+                        update: row['currentTimestamp']
+                    };
+                    if (temp['baru'] === null) temp['baru'] = 0;
+                    if (!temp['update']) temp['update'] = null;
+                    toReturn.push(temp);
+                });
+                res.send(toReturn);
             });
         }
     });
