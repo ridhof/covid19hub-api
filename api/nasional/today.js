@@ -14,8 +14,7 @@ module.exports = (req, res) => {
 
     client.connect(err => {
         if (err) {
-            res.code(400);
-            res.json(err);
+            res.send({"mongo": uri, "error": err});
         } else {
             const db = client.db('covid19hubid');
             
