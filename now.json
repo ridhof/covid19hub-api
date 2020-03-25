@@ -1,4 +1,7 @@
 {
+    "env": {
+        "mongo_url": "@mongo_url"
+    },
     "headers": [
         {
             "source": "/(.*)",
