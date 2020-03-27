@@ -12,6 +12,7 @@ and actually there is no point cloning this app on your environment, since you d
 * / => return a general text, proving the app is running well
 * /api/nasional/today => return summary of latest day, based on national data
 * /api/nasional/data => return overall data ordered by the day, based on national data
+* /api/provinsi/today => return summary of latest day, based on all state/province data.
 * /api/provinsi/Nama Provinsi/today => return summary of latest day, based on selected state/province
 * /api/provinsi/Nama Provinsi/data => return overall data ordered by the day, based on selected state/province
 * /api/news => return 10 newest news related to Covid-19 in Indonesia
